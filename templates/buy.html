@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<br>
+<br>
+<br>
+
+<div class="container">
+
+    <form>
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Bill Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Name Surname</label>
+            <input type="text" required id="fname" name="firstname" placeholder="Name Surname">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" required id="email" name="email" placeholder="Mail">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" required id="adr" name="address" placeholder="Address">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" required id="city" name="city" placeholder="City">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">District</label>
+                <input type="text" required  id="state" name="state" placeholder="District">
+              </div>
+              <div class="col-50">
+                <label for="zip">Post Code</label>
+                <input type="number" required id="zip" name="zip" placeholder="Code">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment </h3>
+            <label for="fname">Available Methods</label>
+            <div class="icon-container">
+              <i class="fa-brands fa-cc-visa" style="color:navy;"></i>
+              <i class="fa-brands fa-cc-amex" style="color:blue;"></i>
+              <i class="fa-brands fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa-brands fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on the Card</label>
+            <input type="text" required id="cname" name="cardname" placeholder="Name">
+            <label for="ccnum">Card Number</label>
+            <input type="number" required pattern="[0-9]+" id="ccnum" name="cardnumber" placeholder="0000-0000-0000-0000">
+            <label for="expmonth">Month</label>
+            <input type="number" required id="expmonth" name="expmonth" placeholder="Month">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Year</label>
+                <input type="number" required id="expyear" name="expyear" placeholder="Year">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="number" required id="cvv" name="cvv" placeholder="Cvv">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr">Shipping address is the same as billing address
+        </label>
+        <a href="/complated" class="btn btn-danger">Complate Payment</a>
+        
+      </form>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+{% endblock %}

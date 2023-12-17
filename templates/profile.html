@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="profiledetail">
+            <br>
+            <hr>
+            <h3>Profile</h3>
+            <hr>
+             Name : {{users.name}}
+             <hr>
+             
+             Username : {{users.username}}
+             <hr>
+             
+             Email : {{users.email}}
+             <hr>
+            <br>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <br />
+    <h3>My Purchases</h3>
+    
+    <hr>
+
+    {% if complatedorders %}
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Boxing Center</th>
+          <th scope="col">Coach</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Location</th>
+          <th scope="col">Price</th>
+          <th scope="col">Time</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in complatedorders %}
+        <tr>
+          <th scope="row">{{order.id}}</th>
+          <td>{{order.centername}}</td>
+          <td>
+            <a href="/coach/{{order.id}}" class="coachname"
+              >{{order.coachname}}</a
+            >
+          </td>
+          <td>{{order.phone}}</td>
+          <td>{{order.location}}</td>
+          <td>{{order.price}} $</td>
+          <td>{{order.time}} </td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    {% else %}
+
+    <div class="alert alert-danger">You have not bought anything yet!</div>
+
+    {% endif %}
+
+    </div>
+
+    <div class="container">
+        
+        <br />
+    <h3>My Sales</h3>
+    
+    <hr>
+
+    {% if owners %}
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Boxing Center</th>
+          <th scope="col">Coach</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Location</th>
+          <th scope="col">Price</th>
+          <th scope="col">Buyer</th>
+          <th scope="col">Time</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for owner in owners %}
+        <tr>
+          <th scope="row">{{owner.id}}</th>
+          <td>{{owner.centername}}</td>
+          <td>
+            <a href="/coach/{{owner.id}}" class="coachname"
+              >{{owner.coachname}}</a
+            >
+          </td>
+          <td>{{owner.phone}}</td>
+          <td>{{owner.location}}</td>
+          <td>{{owner.price}} $</td>
+          <td>{{owner.admin}} </td>
+          <td>{{owner.time}} </td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    {% else %}
+
+    <div class="alert alert-danger">You have not sold anything yet!</div>
+
+    {% endif %}
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+{% endblock %}

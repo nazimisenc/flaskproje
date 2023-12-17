@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <br>
+    <h3>Update Boxing Center</h3>
+    <hr>
+
+    {% from "includes/formhelpers.html" import render_field %}
+    <form method="post">
+        {{ render_field(form.centername,class = "form-control") }}
+        {{ render_field(form.coachname,class = "form-control") }}
+        {{ render_field(form.price,class = "form-control") }}
+        {{ render_field(form.phone,class = "form-control") }}
+        {{ render_field(form.location,class = "form-control") }}
+        {{ render_field(form.aboutcoach,class = "form-control") }}
+    <button type="submit" class="btn btn-danger">Update</button>
+    </form>
+
+</div>
+<br>
+<br>
+
+{% endblock %}

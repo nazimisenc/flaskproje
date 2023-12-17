@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block body %}
+<br />
+<br />
+<br />
+<div class="container">
+  <h3>Details of Coach</h3>
+  <br>
+  <div class="coachdetail">
+    {% if coachclass %}
+    <br>
+    <hr>
+    <h4>{{coachclass.coachname}}</h4>
+    <hr />
+    Phone : {{coachclass.phone}}
+    <hr />
+    Location : {{coachclass.location}}
+    <hr />
+    {{coachclass.aboutcoach|safe}} 
+    <hr>
+    
+    {% else %}
+    
+    <div class="alert alert-warning">There is no coach like that!</div>
+
+    {% endif %}
+    <br>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<br>
+<br>
+<div class="container">
+  <br>
+  <h3>Boxing Centers</h3>
+  <hr>
+
+  <form action="/search" method = "post">
+    <input type="text" name = "keyword" class="input-sm" maxlength="64" placeholder="Search center name">
+<button type="submit" class="btn btn-danger">Search</button>
+</form>
+<hr>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Boxing Center</th>
+      <th scope="col">Coach</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Location</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for class in classes %}
+    <tr>
+      <th scope="row">{{class.id}}</th>
+      <td>{{class.centername}}</td>
+      <td><a href="/coach/{{class.id}}" class="coachname">{{class.coachname}}</a></td>
+      <td>{{class.phone}}</td>
+      <td>{{class.location}}</td>
+      <td>{{class.price}} $</td>
+      <td><a href="/addtocart/{{class.id}}" class = "btn btn-danger">Add to Cart</a></td>
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>  
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock %}
